@@ -9,6 +9,19 @@
  * For s1 = "aabcc" and s2 = "adcaa", the output should be 3
  * Strings have 3 common characters - 2 "a"s and 1 "c".
  */
+
+function check(str) {
+  const obj = {};
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] in obj) {
+      obj[str[i]]++;
+    } else {
+      obj[str[i]] = 1;
+    }
+  }
+  return obj;
+}
+
 function getCommonCharacterCount(s1, s2) {
   const obj1 = check(s1);
   const obj2 = check(s2);
